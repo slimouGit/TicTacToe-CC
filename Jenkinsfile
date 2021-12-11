@@ -4,6 +4,7 @@ agent any
     stage("build") {
       steps{
         echo "building application"
+        sh 'mvn -B -DskipTests clean package'
       }
     }
     stage("test") {
