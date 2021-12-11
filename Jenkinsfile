@@ -1,9 +1,24 @@
 pipeline{
 agent any
   stages {
-    stage("build jenkinsfile") {
+    stage("build") {
       steps{
-        echo "JenkinsFile is used"
+        echo "building application"
+      }
+    }
+    stage("test") {
+      when {
+        expression {
+          BRANCH_NAME == 'master'
+        }
+      }
+      steps{
+        echo "test application"
+      }
+    }
+    stage("deploy") {
+      steps{
+        echo "deploy application"
       }
     }
   }
