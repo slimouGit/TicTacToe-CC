@@ -14,7 +14,7 @@ agent any
       }
       steps{
         echo "test application"
-        sh './mvnw test'
+        sh 'mvn test'
       }
     }
     stage("deploy") {
