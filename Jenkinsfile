@@ -6,12 +6,27 @@ agent any
     }
   stages {
    
+    stage("clean") {
+      steps{
+        echo "clean application"
+        bat 'mvn clean -D skipTests'
+      }
+    }
+    
     stage("build") {
       steps{
         echo "building application"
         bat 'mvn -Dmaven.test.failure.ignore=true install'
       }
     }
+    
+    stage("compile") {
+      steps{
+        echo "compile application"
+        bat 'mvn compile'
+      }
+    }
+    
     stage("test") {
       when {
         expression {
