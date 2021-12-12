@@ -9,7 +9,7 @@ agent any
     stage("build") {
       steps{
         echo "building application"
-        sh 'mvn -Dmaven.test.failure.ignore=true install'
+        bat 'mvn -Dmaven.test.failure.ignore=true install'
       }
     }
     stage("test") {
