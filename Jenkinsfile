@@ -41,6 +41,7 @@ agent any
     stage("deploy") {
       steps{
         echo "deploy application"
+        bat 'mvn deploy'
       }
     }
   }
