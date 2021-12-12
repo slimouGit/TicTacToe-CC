@@ -38,11 +38,6 @@ agent any
         bat 'mvn test'
       }
     }
-    stage("deploy") {
-      steps{
-        echo "deploy application"
-        bat 'mvn deploy'
-      }
-    }
+  
   }
 }
